@@ -8,13 +8,20 @@ html {
     box-sizing: inherit; /* keep */
 }
 body {
-    font-family: sans-serif;
+    font-family: 'Cardo', 'Times New Roman', serif;
     background: #5598b2; /* keep */
     color: #333; /* keep */
     margin: 0; /* keep */
+    font-size: 125%;
+    line-height: 1.5em;
 }
 h1, h2 {
-    font-family: serif;
+    font-family: 'Montserrat', 'Arial', sans-serif;
+    margin: 0;
+
+}
+h1 {
+  padding-top: 20px;
 }
 #tagline {
     font-style: italic;
@@ -38,10 +45,17 @@ img {
     margin: auto; /* keep */
     display: grid; /* keep */
     grid-template-columns: repeat(5, 1fr);
-    grid-template-rows: repeat(2, auto);
+    grid-template-rows: repeat(8, auto);
     grid-template-areas:
-        "header arial georgia pairing bobwhite-quail"
-        "readability line-length helvetica typeface footer";
+        "header header header header header"
+        "pairing pairing pairing arial georgia"
+        "bobwhite-quail bobwhite-quail readability readability readability"
+        "bobwhite-quail bobwhite-quail line-length line-length line-length"
+        "typeface typeface typeface helvetica helvetica"
+        "typeface typeface typeface helvetica helvetica"
+        "typeface typeface typeface ... ..."
+        "footer footer footer footer footer";
+
 }
 
 /* all grid items -
@@ -53,43 +67,73 @@ img {
 header {
     grid-area: header; /* keep */
     background: #fff; /* keep */
+    margin: 0;
+    text-align: center;
 }
 #arial {
     grid-area: arial; /* keep */
     background: #a8e8ff; /* keep */
+    margin: 0;
+    padding: 20px 10px 20px 20px;
+    padding-top: 40px;
 }
 #georgia {
     grid-area: georgia; /* keep */
     background: #a8e8ff; /* keep */
+    margin: 0;
+    padding: 20px 20px 20px 10px;
+    padding-top: 40px;
 }
 #pairing {
     grid-area: pairing; /* keep */
     background: #a8e8ff; /* keep */
+    margin: 0;
+    padding: 40px;
+    font-size: 130%;
+    line-height: 1.5em;
 }
 #bobwhite-quail {
     grid-area: bobwhite-quail; /* keep */
     background: #d2f4ff; /* keep */
+    margin: 0;
+    padding: 20px 40px;
+    padding-top: 40px;
 }
 #readability {
     grid-area: readability; /* keep */
     background: #d2f4ff; /* keep */
+    margin: 0;
+    padding: 20px 40px;
+    padding-top: 40px;
 }
 #line-length {
     grid-area: line-length; /* keep */
     background: #d2f4ff; /* keep */
+    margin: 0;
+    padding: 20px 40px
 }
 #helvetica {
     grid-area: helvetica; /* keep */
     background: #fff; /* keep */
+    margin: 2em;
+    padding: 20px 40px;
+    padding-top: 40px;
 }
 #typeface {
     grid-area: typeface; /* keep */
     color: #d2f4ff; /* keep */
     background: #5598b2; /* keep */
+    margin: 0;
+    padding: 20px 40px;
+    padding-top: 40px;
+    text-shadow: .1em .1em .2em black;
 }
+
 footer {
     grid-area: footer; /* keep */
     background: #b2988a; /* keep */
+    margin: 0;
+    text-align: center;
 }
 
 /* end of all 10 grid items */
@@ -103,5 +147,69 @@ a:hover {
     color: #f4cdb7; /* keep */
     text-decoration: none; /* keep */
 }
+#typeface a {
+  text-shadow: none;
+}
 
 /* media queries below - only 1 is needed */
+@media screen and (max-width: 700px){
+  #container {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(9, auto);
+    grid-template-areas:
+      "header header"
+      "arial georgia"
+      "pairing pairing"
+      "bobwhite-quail bobwhite-quail"
+      "readability readability"
+      "line-length line-length"
+      "helvetica helvetica"
+      "typeface typeface"
+      "footer footer";
+
+  }
+#helvetica {
+  margin: 0;
+}
+
+h1 {
+  line-height: 1.3em;
+  padding-left: 1em;
+  padding-right: 1em;
+
+}
+footer {
+  padding: .5em;
+}
+
+#pairing {
+  padding-top: 5px;
+}
+#arial {
+  padding: 1.5em .75em 1em 1.5em;
+}
+#georgia {
+  padding: 1.5em 1.5em 1em .75em;
+}
+
+#bobwhite-quail {
+  padding-top: 40px;
+}
+header img {
+  display: none;
+}
+#readability {
+  padding-top: 5px;
+}
+
+#line-length {
+  padding-top: 5px;
+  padding-bottom: 0;
+}
+footer {
+text-align: left;
+padding-left: 2em;
+padding-right: 2em;
+}
+
+}
